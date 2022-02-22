@@ -20,7 +20,7 @@ function TodoApp() {
       setTaskList([...taskList, taskDetails]);
     }
   };
-
+   
   const deleteTask = (e, id) => {
     e.preventDefault();
     setTaskList(taskList.filter((t) => t.id !== id));
@@ -47,7 +47,7 @@ function TodoApp() {
         name="text"
         id="text"
         onChange={(e) => handleChange(e)}
-        placeholder="Title..."
+        placeholder="Add a new Todo"
       />
       <button className="add-btn" onClick={AddTask}>
         Add
@@ -62,11 +62,11 @@ function TodoApp() {
                 className="completed"
                 onClick={(e) => taskCompleted(e, t.id)}
               >
-                Completed
+                Done
               </button>
 
               <button className="delete" onClick={(e) => deleteTask(e, t.id)}>
-                Delete
+                close
               </button>
             </li>
           ))}
